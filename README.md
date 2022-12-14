@@ -352,6 +352,66 @@ class CoinChanger{
     }
   }
 
+# 5) coin change(user input)
+import java.util.*;
+public class MinCoin{
+    public static int coinChange(int[] coins, int amount, int[][] dp) {
+        int n = coins.length;
+       
+        for(int i=0;i&lt;=n;++i)
+        {
+            for(int j=0;j&lt;=amount;++j)
+            {
+                if(j==0)
+                    dp[i][j] = 0;
+                else if(i==0)
+                    dp[i][j] = 100;
+                else if(coins[i-1]&gt;j)
+                    dp[i][j] = dp[i-1][j];
+                else
+                    dp[i][j] = Math.min(1 + dp[i][j-coins[i-1]], dp[i-1][j]);
+            }
+        }
+        return dp[n][amount]&gt;1e4 ? -1:dp[n][amount];
+    }
+     
+   
+    public static void print2D(int dp[][])
+   {
+        for (int[] row : dp)
+            System.out.println(Arrays.toString(row));// converting each row as
+string and then printing in a separate line
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(&quot;Enter the number of coins you want to store: &quot;);
+        int n =sc.nextInt();
+   
+        System.out.println(&quot;Enter &quot;+n+&quot; coins which will be available: &quot;);  
+        int[] coins = new int[n];
+        for(int i=0; i&lt;n; i++){
+            coins[i]= sc.nextInt();
+        }
+        System.out.println(&quot;Enter the net buks: &quot;);
+        int amount = sc.nextInt();
+        int dp[][] = new int[n+1][amount+1];
+
+        int ans= coinChange(coins,amount, dp);
+        System.out.println(&quot;therefore the table formed is,&quot;);
+       
+        print2D(dp);
+        System.out.println(&quot;--------------------------------------------------
+-----------------&quot;);
+        System.out.print(&quot;minimum amount of coins requird to store &quot;+amount+&quot;
+buks is: &quot;);
+        System.out.println(ans);
+        System.out.println(&quot;--------------------------------------------------
+-----------------&quot;);
+       
+       
+    }
+}
+
 
 
 # 6) prims algorithm
@@ -518,3 +578,25 @@ class Knapsack {
 /*This code is contributed by Rajat Mishra */
 
 
+# 8) Binomial Coeffient
+import java.util.Scanner;
+
+public class BinomialCoefficient {
+   public static long fact(int i) {
+      if(i <= 1) {
+         return 1;
+      }
+      return i * fact(i - 1);
+   }
+   public static void main(String args[]) {
+      Scanner sc = new Scanner(System.in);  
+      System.out.println("Enter n value: ");
+     
+      int n = sc.nextInt();
+      System.out.println("Enter r value: ");
+     
+      int r = sc.nextInt();
+      long ncr = fact(n)/(fact(r)*fact(n-r));
+      System.out.println("c("+n+", "+r+") :"+ ncr);
+   }
+}
