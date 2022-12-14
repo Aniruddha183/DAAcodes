@@ -1,5 +1,5 @@
 # DAAcodes
-1)Binary search code
+# 1)Binary search code
 import java.io.*;
 import java.util.*;
  import java.util.Scanner;
@@ -63,7 +63,7 @@ public static void main(String args[]){
 }
 }
  
- 2)  Bubble sort
+ # 2)  Bubble sort
 import java.util.*;
 import java.io.*;
 import java.util.Scanner;  
@@ -114,7 +114,7 @@ public class BubbleSort{
 }
 
 
-3)Merge sort
+# 3)Merge sort
 import java.util.Scanner;
 import java.util.*;
 import java.io.*;
@@ -207,7 +207,7 @@ public class MergeSort {
 }
 
 
-4)Quick Sort
+# 4)Quick Sort
 import java.util.Scanner;
  
 public class QuickSort {
