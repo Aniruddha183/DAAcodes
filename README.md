@@ -63,7 +63,7 @@ public static void main(String args[]){
 }
 }
  
- # 2)  Bubble sort
+# 2)  Bubble sort
 import java.util.*;
 import java.io.*;
 import java.util.Scanner;  
